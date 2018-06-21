@@ -26,3 +26,9 @@ gulp.task('serve', ['sass'], function(){
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
+
+// Move the fonts folder to src
+gulp.task('fonts', function(){
+    gulp.src('node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest("src/fonts"));
+})
