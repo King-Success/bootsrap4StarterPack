@@ -27,8 +27,14 @@ gulp.task('serve', ['sass'], function(){
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
-// Move the fonts folder to src
+// Move the fonts folder to src/fonts
 gulp.task('fonts', function(){
     gulp.src('node_modules/font-awesome/fonts/*')
         .pipe(gulp.dest("src/fonts"));
+})
+    
+// Move the fonts Css to src/css
+gulp.task('fa', function(){
+    gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
+        .pipe(gulp.dest("src/css"));
 })
