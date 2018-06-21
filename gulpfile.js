@@ -31,10 +31,12 @@ gulp.task('serve', ['sass'], function(){
 gulp.task('fonts', function(){
     gulp.src('node_modules/font-awesome/fonts/*')
         .pipe(gulp.dest("src/fonts"));
-})
+});
     
 // Move the fonts Css to src/css
 gulp.task('fa', function(){
     gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
         .pipe(gulp.dest("src/css"));
-})
+});
+
+gulp.task('default', ['js', 'serve', 'fa', 'fonts']);
